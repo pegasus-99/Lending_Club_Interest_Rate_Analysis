@@ -14487,6 +14487,11 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Data-Description:">Data Description:<a class="anchor-link" href="#Data-Description:">&#182;</a></h2><h3 id="This-data-has-55-columns-and-10,000-contining-the-credit-and-demographic-information-of-its-customers.-There-are-10-columns-with-null-values-from-ranging-24-to-8500.">This data has 55 columns and 10,000 contining the credit and demographic information of its customers. There are 10 columns with null values from ranging 24 to 8500.<a class="anchor-link" href="#This-data-has-55-columns-and-10,000-contining-the-credit-and-demographic-information-of-its-customers.-There-are-10-columns-with-null-values-from-ranging-24-to-8500.">&#182;</a></h3><h3 id="This-dataset-also-13-'object'-columns-which-are-categorical-along-with-a-few-other-categorical-columns-that-I-describe-below.-The-problem-that-we-have-to-deal-with-here-is-to-deal-with-the-null-values.">This dataset also 13 'object' columns which are categorical along with a few other categorical columns that I describe below. The problem that we have to deal with here is to deal with the null values.<a class="anchor-link" href="#This-dataset-also-13-'object'-columns-which-are-categorical-along-with-a-few-other-categorical-columns-that-I-describe-below.-The-problem-that-we-have-to-deal-with-here-is-to-deal-with-the-null-values.">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Data-Exploration">Data Exploration<a class="anchor-link" href="#Data-Exploration">&#182;</a></h1>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -19463,7 +19468,8 @@ Name: loan_status, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Preprocessing">Data Preprocessing<a class="anchor-link" href="#Data-Preprocessing">&#182;</a></h1><h4 id="Step-1:-Encoding">Step 1: Encoding<a class="anchor-link" href="#Step-1:-Encoding">&#182;</a></h4>
+<h1 id="Data-Preprocessing">Data Preprocessing<a class="anchor-link" href="#Data-Preprocessing">&#182;</a></h1><h4 id="Step-1:-Encoding">Step 1: Encoding<a class="anchor-link" href="#Step-1:-Encoding">&#182;</a></h4><p>I encode the data using the label encoder, which is hierarchal encoder. I have used this encoder because it does not increase the dimensionality of the data.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -19966,7 +19972,8 @@ Name: loan_status, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="knn-imputation-to-fill-the-missing-data">knn imputation to fill the missing data<a class="anchor-link" href="#knn-imputation-to-fill-the-missing-data">&#182;</a></h4>
+<h4 id="knn-imputation-to-fill-the-missing-data">knn imputation to fill the missing data<a class="anchor-link" href="#knn-imputation-to-fill-the-missing-data">&#182;</a></h4><p>I used knn imputation here which applies the knn algorithm on the column and predicts the missing values. I used this method of prediction because using other imputation might have skewed the data. KNN approximates the values by the points that are closest to them.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -19976,7 +19983,6 @@ Name: loan_status, dtype: int64</pre>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import the KNNimputer class</span>
 <span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">KNNImputer</span>
-
 <span class="c1"># create an object for KNNImputer</span>
 <span class="n">imputer</span> <span class="o">=</span> <span class="n">KNNImputer</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -20129,7 +20135,8 @@ dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Scaling-the-data-with-a-robust-scaler">Scaling the data with a robust scaler<a class="anchor-link" href="#Scaling-the-data-with-a-robust-scaler">&#182;</a></h4>
+<h4 id="Scaling-the-data-with-a-robust-scaler">Scaling the data with a robust scaler<a class="anchor-link" href="#Scaling-the-data-with-a-robust-scaler">&#182;</a></h4><p>The data has many outliers so I chose the robust scaler since it uses the Interquartile range to normalize the data. Data normalization was needed here to give all the attributes the same influence for prediction</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -24621,12 +24628,7 @@ Mape(Test Data): 0.1902 of int rate
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
+<h3 id="If-I-had-more-time,-I-would-perform-hyperparameter-tuning-using-gridsearch-and-k-fold-crossvalidation-and-improve-the-model.">If I had more time, I would perform hyperparameter tuning using gridsearch and k-fold crossvalidation and improve the model.<a class="anchor-link" href="#If-I-had-more-time,-I-would-perform-hyperparameter-tuning-using-gridsearch-and-k-fold-crossvalidation-and-improve-the-model.">&#182;</a></h3><h3 id="Furthermore,-I-would-also-test-the-interest-rate-predictions-with-several-other-models-like-XGBoost-and-KNN-regression.">Furthermore, I would also test the interest rate predictions with several other models like XGBoost and KNN regression.<a class="anchor-link" href="#Furthermore,-I-would-also-test-the-interest-rate-predictions-with-several-other-models-like-XGBoost-and-KNN-regression.">&#182;</a></h3>
 </div>
 </div>
 </body>
